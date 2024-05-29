@@ -10,9 +10,13 @@
     "startPromise": "node SimplePromise.js",
     "startAwait": "node Await.js"
   },
-  "author": "",
+  "author": {
+    "name": "Bryce",
+    "email": "mobilemh@gmail.com",
+    "url": "https://github.com/BryceMeng"
+  },
   "license": "ISC",
-  "description": "",
+  "description": "Introduction to Async and Sync with JavaScript",
   "dependencies": {
     "async_hooks": "^1.0.0",
     "cli-color": "^2.0.4",
