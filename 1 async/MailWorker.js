@@ -72,8 +72,8 @@ function deliveryProcessSync(){
     logFunc = wlogger.info
     packTheMail()
     onTheWayThere()
-    // replyTheMail()
-    // onTheWayBack()
+    replyTheMail()
+    onTheWayBack()
     // processReplyMail()
 }
 
@@ -82,8 +82,8 @@ function deliveryProcessAsync(pParentPort){
     logFunc = (msg) => parentPort.postMessage(msg)
     packTheMail()
     onTheWayThere()
-    // replyTheMail()
-    // onTheWayBack()
+    replyTheMail()
+    onTheWayBack()
     // processReplyMail()
 }
 
