@@ -1,0 +1,22 @@
+{
+  "name": "1-async",
+  "version": "1.0.0",
+  "main": "MailDemo.js",
+  "scripts": {
+    "startMailDemoSync": "node MailDemo.js sync",
+    "startMailDemoAsync": "node MailDemo.js async",
+    "startEventLoop": "node --trace-uncaught EventLoop.js",
+    "startMailDemoWithEventLoop": "node MailDemoWithEventLoop.js",
+    "startPromise": "node SimplePromise.js",
+    "startAwait": "node Await.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "async_hooks": "^1.0.0",
+    "cli-color": "^2.0.4",
+    "winston": "^3.13.0",
+    "winston-transport": "^4.7.0"
+  }
+}
