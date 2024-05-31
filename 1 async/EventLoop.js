@@ -41,21 +41,31 @@ setImmediate(() => {
     logWithTimestamp('setImmediate callback');
 });
 
-
-// setTimeout
+// setTimeout 1
 setTimeout(() => {
-    logWithTimestamp('setTimeout callback');
-}, 0);
+    logWithTimestamp('setTimeout callback1');
+    Promise.resolve().then(() => {
+        logWithTimestamp('Promise resolved in timer 1');
+    });
+    process.nextTick(() => {
+        logWithTimestamp('process.nextTick callback1');
+    });
+    
+});
 
-
-// micro task：process.nextTick
-process.nextTick(() => {
-    logWithTimestamp('process.nextTick callback');
+// setTimeout 2
+setTimeout(() => {
+    logWithTimestamp('setTimeout callback2');
 });
 
 // micro task：Promise
 Promise.resolve().then(() => {
     logWithTimestamp('Promise resolved');
+});
+
+// micro task：process.nextTick
+process.nextTick(() => {
+    logWithTimestamp('process.nextTick callback');
 });
 
 logWithTimestamp('End of the script');

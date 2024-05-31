@@ -73,7 +73,8 @@ function postTheMailAsync(){
             // console.log(`Received message from worker: ${message}`);
             switch (message) {
                 case "Completed":
-                    logger.info("Post office got the mail and nofity me. I'll add the task into my schedule and to it later.")
+                    logger.info("Post office got the mail and nofity me."+
+                    "'ll add the task into my schedule and to it later.")
                     eventLoop.addTask(callBackFromPostOffice)
                     break;
                 default:
@@ -101,7 +102,7 @@ function postTheMailAsync(){
             }
         });
     } else {
-        // code for the new worker thread
+        // code for the Post Office's thread
         parentPort.on('message', (message) => {
             if (message === 'start') {
             //   console.log("paremeter:" + workerData.p1)

@@ -58,6 +58,7 @@ function postTheMailSync(){
 
 function postTheMailAsync(){
     if(isMainThread){
+        // my main thread
         logger.info("Async Process Demonstration")
 
         const worker = new Worker('./MailDemo.js', {workerData: { p1: 2 }});
@@ -96,6 +97,7 @@ function postTheMailAsync(){
         
 
     } else {
+        // Post Office's thread
         parentPort.on('message', (message) => {
             if (message === 'start') {
             //   console.log("paremeter:" + workerData.p1)

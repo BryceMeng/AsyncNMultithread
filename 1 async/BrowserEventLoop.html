@@ -1,0 +1,42 @@
+Please press F12 to check the result
+
+<script>
+console.log('Script start');
+
+setTimeout(() => {
+  console.log('setTimeout 1');
+});
+
+Promise.resolve().then(() => {
+  console.log('Promise 1');
+  setTimeout(() => {
+    console.log('setTimeout 2');
+  });
+  requestAnimationFrame(() => {
+    console.log('requestAnimationFrame 1');
+  });
+});
+
+setTimeout(() => {
+  console.log('setTimeout 3');
+
+});
+
+Promise.resolve().then(() => {
+  console.log('Promise 2');
+});
+
+const observer = new MutationObserver(() => {
+  console.log('MutationObserver');
+});
+
+observer.observe(document.body, { attributes: true });
+
+document.body.setAttribute('data-test', '123');
+
+requestAnimationFrame(() => {
+  console.log('requestAnimationFrame 2');
+});
+
+console.log('Script end');
+</script>
